@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untuk Ara ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="stars"></div>
+    <div class="moon"></div>
+
+    <!-- BGM -->
+    <audio id="bgm" loop preload="auto">
+        <source src="music/bgm.mp3" type="audio/mpeg">
+    </audio>
+
+    <main>
+
+        <!-- OPENING -->
+        <section class="screen active" id="opening">
+            <div class="opening-content">
+
+                <div class="envelope">💌</div>
+
+                <p class="small-text">
+                    Ada sesuatu yang ingin Andika sampaikan...
+                </p>
+
+                <h1>Untuk Ara ❤️</h1>
+
+                <p class="opening-subtitle">
+                    Dari Andika, untuk seseorang yang spesial.
+                </p>
+
+                <button id="openButton">
+                    Buka Surat 💌
+                </button>
+
+            </div>
+        </section>
+
+
+        <!-- LETTER -->
+        <section class="screen" id="letterScreen">
+
+            <div class="letter-card">
+
+                <div class="letter-header">
+                    <span>🌙</span>
+                    <h2>Untuk Ara, dari Andika ❤️</h2>
+                    <span>✨</span>
+                </div>
+
+                <div class="scroll-hint" id="scrollHint">
+                    👇 Scroll dong, sayang, biar baca semua ❤️
+                </div>
+
+                <div class="letter-text" id="letterText"></div>
+
+                <button id="nextButton">
+                    Lanjut → ❤️
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- MEMORY -->
+        <section class="screen" id="memoryScreen">
+
+            <div class="memory-card">
+
+                <div class="big-moon">🌙</div>
+
+                <h2>Untuk Ara...</h2>
+
+                <p>
+                    Jarak mungkin memisahkan kita,
+                    tapi bukan berarti membuat perasaan
+                    kita harus ikut berjauhan.
+                </p>
+
+                <p>
+                    Ada satu hal yang Andika percaya...
+                </p>
+
+                <strong>
+                    Suatu hari nanti kita akan bertemu. ❤️
+                </strong>
+
+                <button id="memoryButton">
+                    Lanjut lagi → ✨
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ENDING -->
+        <section class="screen" id="ending">
+
+            <div class="ending-content">
+
+                <div class="heart">
+                    ❤️
+                </div>
+
+                <h1>Sabar ya, Ara.</h1>
+
+                <h2>Tunggu Andika di sana. 🥺❤️</h2>
+
+                <p>
+                    Suatu hari nanti, Andika ingin mengatakan
+                    semua ini bukan lewat layar HP...
+                </p>
+
+                <p class="final-message">
+                    Tapi langsung di depan Ara. ❤️🌙
+                </p>
+
+                <div class="signature">
+                    — Andika, untuk Ara ❤️
+                </div>
+
+                <button id="finalButton">
+                    Aku akan menunggu ❤️
+                </button>
+
+                <p id="finalText"></p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

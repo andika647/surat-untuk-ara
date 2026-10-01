@@ -1,0 +1,466 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Georgia, "Times New Roman", serif;
+    color: #fff;
+    background:
+        radial-gradient(circle at top, #35105f 0%, #160925 40%, #07030d 100%);
+    overflow-x: hidden;
+}
+
+/* BACKGROUND */
+
+.stars {
+    position: fixed;
+    inset: 0;
+    z-index: -3;
+
+    background-image:
+        radial-gradient(circle, rgba(255,255,255,.8) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255,255,255,.5) 1px, transparent 1px);
+
+    background-size: 90px 90px, 150px 150px;
+    background-position: 20px 30px, 70px 90px;
+
+    opacity: .45;
+
+    animation: starsMove 18s linear infinite;
+}
+
+@keyframes starsMove {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(40px);
+    }
+}
+
+.moon {
+    position: fixed;
+
+    width: 170px;
+    height: 170px;
+
+    border-radius: 50%;
+
+    right: -55px;
+    top: 40px;
+
+    background: #fff4d6;
+
+    box-shadow:
+        0 0 30px rgba(255,244,214,.5),
+        0 0 90px rgba(196,139,255,.2);
+
+    z-index: -2;
+}
+
+/* SCREEN */
+
+main {
+    width: 100%;
+}
+
+.screen {
+    min-height: 100vh;
+    width: 100%;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px 18px;
+}
+
+.screen.active {
+    display: flex;
+    animation: fadeIn .8s ease;
+}
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* OPENING */
+
+.opening-content {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.envelope {
+    font-size: 75px;
+    margin-bottom: 20px;
+
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+.small-text {
+    color: #d8c7e9;
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+
+.opening-content h1 {
+    font-size: clamp(40px, 11vw, 70px);
+    margin-bottom: 15px;
+
+    text-shadow:
+        0 0 25px rgba(210,145,255,.55);
+}
+
+.opening-subtitle {
+    color: #d9c9e8;
+    font-size: 16px;
+    margin-bottom: 35px;
+}
+
+/* BUTTON */
+
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    color: white;
+
+    background:
+        linear-gradient(135deg, #8d3bd1, #5d238f);
+
+    padding: 14px 24px;
+
+    border-radius: 30px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    box-shadow:
+        0 8px 25px rgba(112,42,165,.35);
+
+    transition: .25s ease;
+}
+
+button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(160,78,218,.5);
+}
+
+button:active {
+    transform: scale(.96);
+}
+
+/* LETTER */
+
+#letterScreen {
+    align-items: flex-start;
+
+    padding-top: 45px;
+    padding-bottom: 45px;
+}
+
+.letter-card {
+    width: 100%;
+    max-width: 720px;
+
+    background: rgba(21,10,34,.88);
+
+    border: 1px solid rgba(210,160,255,.2);
+
+    border-radius: 24px;
+
+    padding: 25px 20px;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.45);
+
+    backdrop-filter: blur(10px);
+}
+
+.letter-header {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-bottom: 20px;
+}
+
+.letter-header h2 {
+    text-align: center;
+
+    font-size:
+        clamp(20px,5vw,28px);
+}
+
+.scroll-hint {
+    text-align: center;
+
+    font-size: 13px;
+
+    color: #d9b9f5;
+
+    margin-bottom: 20px;
+
+    animation: hintPulse 1.8s infinite;
+}
+
+.scroll-hint.hidden {
+    display: none;
+}
+
+@keyframes hintPulse {
+
+    0%,100% {
+        opacity: .5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+.letter-text {
+    line-height: 1.9;
+
+    font-size: 16px;
+
+    color: #f3eafa;
+
+    white-space: pre-line;
+
+    min-height: 300px;
+}
+
+#nextButton {
+    display: block;
+
+    margin:
+        30px auto 0;
+}
+
+/* MEMORY */
+
+.memory-card {
+    width: 100%;
+    max-width: 600px;
+
+    text-align: center;
+
+    background:
+        rgba(21,10,34,.88);
+
+    border:
+        1px solid rgba(210,160,255,.2);
+
+    border-radius: 24px;
+
+    padding: 35px 25px;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.45);
+}
+
+.big-moon {
+    font-size: 80px;
+
+    margin-bottom: 15px;
+
+    animation:
+        float 3s ease-in-out infinite;
+}
+
+.memory-card h2 {
+    font-size: 32px;
+
+    margin-bottom: 25px;
+}
+
+.memory-card p {
+    color: #ddd0e9;
+
+    line-height: 1.8;
+
+    margin-bottom: 18px;
+}
+
+.memory-card strong {
+    display: block;
+
+    font-size: 20px;
+
+    color: #f1d5ff;
+
+    margin: 25px 0;
+}
+
+/* ENDING */
+
+.ending-content {
+    width: 100%;
+    max-width: 600px;
+
+    text-align: center;
+}
+
+.heart {
+    font-size: 90px;
+
+    margin-bottom: 20px;
+
+    animation:
+        heartbeat 1.4s infinite;
+}
+
+@keyframes heartbeat {
+
+    0%,100% {
+        transform: scale(1);
+    }
+
+    15% {
+        transform: scale(1.15);
+    }
+
+    30% {
+        transform: scale(1);
+    }
+
+    45% {
+        transform: scale(1.1);
+    }
+}
+
+.ending-content h1 {
+    font-size:
+        clamp(35px,9vw,55px);
+
+    margin-bottom: 10px;
+}
+
+.ending-content h2 {
+    color: #e4baff;
+
+    font-size:
+        clamp(20px,5vw,30px);
+
+    margin-bottom: 30px;
+}
+
+.ending-content p {
+    color: #ded1e9;
+
+    line-height: 1.8;
+}
+
+.final-message {
+    color: #fff !important;
+
+    font-size: 20px;
+
+    margin-top: 10px;
+}
+
+.signature {
+    margin: 35px 0;
+
+    color: #e5c4fa;
+
+    font-style: italic;
+
+    font-size: 18px;
+}
+
+#finalText {
+    margin-top: 20px;
+
+    min-height: 25px;
+
+    color: #efcfff;
+
+    font-weight: bold;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .moon {
+        width: 120px;
+        height: 120px;
+
+        right: -45px;
+        top: 25px;
+    }
+
+    .letter-card {
+        padding: 22px 17px;
+    }
+
+    .letter-text {
+        font-size: 15px;
+        line-height: 1.85;
+    }
+
+    .memory-card {
+        padding: 30px 20px;
+    }
+
+    button {
+        padding: 13px 21px;
+
+        font-size: 15px;
+    }
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background: #09040e;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #6e398e;
+
+    border-radius: 10px;
+}
